@@ -521,6 +521,14 @@ p { margin: 0; }
 .footer__meta a:hover { color: var(--gold); }
 .footer__meta span:last-child { margin-left: auto; }
 
+.footer__credit {
+  text-align: center;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  color: rgba(217, 196, 155, 0.6);
+}
+.footer__credit strong { color: var(--amber); letter-spacing: 0.16em; }
+
 /* ---------- Fluid Orb (WebGL) ---------- */
 .fluid-orb {
   position: relative;
