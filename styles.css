@@ -185,30 +185,23 @@ p { margin: 0; }
 }
 
 .hero__logo { position: relative; display: grid; place-items: center; }
-.logo-aparta {
+.hero__logo picture {
   position: relative;
   z-index: 1;
+  display: block;
   width: min(100%, 400px);
+}
+.logo-aparta {
+  width: 100%;
   height: auto;
+  max-height: 60svh;
+  object-fit: contain;
   filter: drop-shadow(0 30px 60px rgba(255, 90, 0, 0.28));
   animation: logoFloat 7s ease-in-out infinite;
 }
 @keyframes logoFloat {
   0%, 100% { transform: translateY(0) rotate(-0.6deg); }
   50% { transform: translateY(-16px) rotate(0.6deg); }
-}
-.logo-aparta__word {
-  font-family: var(--font-display);
-  font-size: 92px;
-  fill: #fff;
-  letter-spacing: 2px;
-}
-.logo-aparta__sub {
-  font-family: var(--font);
-  font-size: 22px;
-  font-weight: 600;
-  fill: var(--cream);
-  letter-spacing: 3.5px;
 }
 
 .eyebrow {
@@ -543,6 +536,15 @@ p { margin: 0; }
 }
 .fluid-orb__canvas { width: 100%; height: 100%; display: block; }
 
+.fluid-orb::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 38%, #ffb347 0%, #ff6a00 55%, #c93c00 100%);
+  mix-blend-mode: multiply;
+}
+
 .fluid-orb--fallback {
   background: radial-gradient(circle at 50% 78%, #fff 0%, #ffb547 32%, #ff6a00 62%, transparent 72%);
   filter: blur(6px);
@@ -553,14 +555,14 @@ p { margin: 0; }
   inset: 0;
   margin: auto;
   width: min(96%, 440px);
-  opacity: 0.5;
+  opacity: 0.55;
   z-index: 0;
-  filter: blur(8px) sepia(0.85) saturate(3.2) hue-rotate(-14deg) brightness(0.9);
+  filter: blur(9px);
   animation: orbPulse 9s ease-in-out infinite;
 }
 @keyframes orbPulse {
-  0%, 100% { transform: scale(1); opacity: 0.42; }
-  50% { transform: scale(1.06); opacity: 0.62; }
+  0%, 100% { transform: scale(1); opacity: 0.46; }
+  50% { transform: scale(1.06); opacity: 0.66; }
 }
 
 .fluid-orb--accent {
@@ -568,9 +570,9 @@ p { margin: 0; }
   top: -34px;
   right: 0;
   width: clamp(110px, 15vw, 165px);
-  opacity: 0.34;
+  opacity: 0.4;
   z-index: 0;
-  filter: blur(3px) sepia(0.8) saturate(3) hue-rotate(-14deg) brightness(0.85);
+  filter: blur(3px);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -592,7 +594,8 @@ p { margin: 0; }
   .hero__logo { order: -1; }
   .lead { margin-inline: auto; }
   .hero__actions, .hero__facts { justify-content: center; }
-  .logo-aparta { width: min(100%, 320px); }
+  .hero__logo picture { width: min(100%, 320px); }
+  .logo-aparta { max-height: 46svh; }
   .cards-3, .cards-2, .timeline { grid-template-columns: repeat(2, 1fr); }
   .register { grid-template-columns: 1fr; }
 }
