@@ -197,11 +197,6 @@ p { margin: 0; }
   max-height: 60svh;
   object-fit: contain;
   filter: drop-shadow(0 30px 60px rgba(255, 90, 0, 0.28));
-  animation: logoFloat 7s ease-in-out infinite;
-}
-@keyframes logoFloat {
-  0%, 100% { transform: translateY(0) rotate(-0.6deg); }
-  50% { transform: translateY(-16px) rotate(0.6deg); }
 }
 
 .eyebrow {
